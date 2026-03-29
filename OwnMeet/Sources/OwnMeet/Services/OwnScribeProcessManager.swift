@@ -82,13 +82,9 @@ final class OwnScribeProcessManager {
             break
         }
 
-        // Patches: stream transcript + JSON progress (falls back gracefully if not patched)
-        args += ["--stream-transcript", "--json-progress"]
-
-        // PID file so we can reliably signal
-        let pidFile = URL(fileURLWithPath: NSTemporaryDirectory()).appending(path: "ownmeet.pid")
-        args += ["--pid-file", pidFile.path]
-
+        // NOTE: --stream-transcript / --json-progress / --pid-file require patched ownscribe.
+        // Until those PRs land, OwnMeet works with stock ownscribe and reads the
+        // session directory after the process exits.
         await spawnProcess(args: args, calendarEventTitle: calendarEventTitle)
     }
 
