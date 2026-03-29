@@ -62,9 +62,24 @@ final class CalendarManager {
 
         todaysEvents = events
         nextEvent = events.first(where: { $0.startDate > now })
-        upcomingEventStartingSoon = events.first(where: {
+        let startingSoon = events.first(where: {
             $0.startDate > now && $0.startDate.timeIntervalSinceNow < 120
         })
+        upcomingEventStartingSoon = startingSoon
+
+        // Fire a notification + optionally auto-start if a meeting is imminent
+        if let event = startingSoon {
+            let settings = AppSettings.shared
+            if settings.autoStartWithCalendar && !OwnScribeProcessManager.shared.isRecording {
+                // Fully automatic: start without prompting
+                Task { await OwnScribeProcessManager.shared.startRecording(
+                    calendarEventTitle: event.title
+                ) }
+            } else {
+                // Prompt via notification banner with "Start Recording" button
+                NotificationManager.shared.notifyMeetingStartingSoon(event)
+            }
+        }
     }
 
     // MARK: – Helpers

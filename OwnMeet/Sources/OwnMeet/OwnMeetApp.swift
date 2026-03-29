@@ -5,11 +5,12 @@ import SwiftUI
 @main
 struct OwnMeetApp: App {
 
-    private let processManager = OwnScribeProcessManager.shared
-    private let sessionStore   = SessionStore.shared
-    private let calendarMgr    = CalendarManager.shared
-    private let installer      = OwnScribeInstaller.shared
-    private let settings       = AppSettings.shared
+    private let processManager      = OwnScribeProcessManager.shared
+    private let sessionStore         = SessionStore.shared
+    private let calendarMgr          = CalendarManager.shared
+    private let installer            = OwnScribeInstaller.shared
+    private let settings             = AppSettings.shared
+    private let notificationManager  = NotificationManager.shared
 
     @Environment(\.openWindow) private var openWindow
 
@@ -26,6 +27,12 @@ struct OwnMeetApp: App {
             menuBarLabel
         }
         .menuBarExtraStyle(.menu)
+
+        // Request notification permission on first launch (needed for meeting alerts)
+        // Using a background task so it doesn't block the app launch
+        let _ = Task {
+            await notificationManager.requestAuthorization()
+        }
 
         // MARK: Main library window
         WindowGroup("OwnMeet", id: "library") {

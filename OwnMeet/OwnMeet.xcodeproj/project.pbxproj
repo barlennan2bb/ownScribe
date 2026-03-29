@@ -11,6 +11,7 @@
 		0C7E22EBE74E0B7D20738171 /* LiveRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5646EAEFBB9D27F3803CA0A1 /* LiveRecordingView.swift */; };
 		0C7FD933595A1DE7AD8BEA23 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5ECB9A57D3057B01B7F6D /* SessionStore.swift */; };
 		110D813D74A779B55297424A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EB93412D567C50F75CB39F /* LibraryView.swift */; };
+		1462E0957F44DBBAF70177E9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484D124A0EE231AA64E5EB7 /* NotificationManager.swift */; };
 		22C13D7BB48FC9F502789DB9 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC869116F78FE6DC892EA5FB /* Session.swift */; };
 		275ADDC3410EAE6063491397 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C0C7F01578D4E4909049A /* OnboardingView.swift */; };
 		4B1136BECAC71F726774B49B /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E48F436FF56835DFDAFAF7 /* ExportManager.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		07D834FFDEE8B88F02563634 /* OwnMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F8EF056FB9671961EB6CD4 /* OwnScribeInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnScribeInstaller.swift; sourceTree = "<group>"; };
+		2484D124A0EE231AA64E5EB7 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		273A9F4DF336FCBE0D19E52F /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		3924DBF52AF9D0FBC4F2D0C9 /* OwnMeetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnMeetApp.swift; sourceTree = "<group>"; };
 		5646EAEFBB9D27F3803CA0A1 /* LiveRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRecordingView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				B8B1D0073101D07E4CBD05AA /* CalendarManager.swift */,
 				E9E48F436FF56835DFDAFAF7 /* ExportManager.swift */,
+				2484D124A0EE231AA64E5EB7 /* NotificationManager.swift */,
 				17F8EF056FB9671961EB6CD4 /* OwnScribeInstaller.swift */,
 				E6FA5223F94078CD53361662 /* OwnScribeProcessManager.swift */,
 				5EB5ECB9A57D3057B01B7F6D /* SessionStore.swift */,
@@ -186,6 +189,7 @@
 				110D813D74A779B55297424A /* LibraryView.swift in Sources */,
 				0C7E22EBE74E0B7D20738171 /* LiveRecordingView.swift in Sources */,
 				F1443E71DCCEEF02CADA983C /* MenuBarView.swift in Sources */,
+				1462E0957F44DBBAF70177E9 /* NotificationManager.swift in Sources */,
 				275ADDC3410EAE6063491397 /* OnboardingView.swift in Sources */,
 				A7D71B3B1EFA070E562A3708 /* OwnMeetApp.swift in Sources */,
 				C13635125408E64DD8A75A1B /* OwnScribeInstaller.swift in Sources */,
