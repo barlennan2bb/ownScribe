@@ -32,10 +32,12 @@ struct Session: Identifiable, Hashable, Sendable {
 
         // Parse date from directory name: YYYY-MM-DD_HHMMSS
         let name = directoryURL.lastPathComponent
+        // Extract just the YYYY-MM-DD_HHMM prefix (15 chars) before any slug suffix
+        let datePart = name.count >= 15 ? String(name.prefix(15)) : name
         let fmt = DateFormatter()
         fmt.locale = Locale(identifier: "en_US_POSIX")
-        fmt.dateFormat = "yyyy-MM-dd_HHmmss"
-        self.date = fmt.date(from: name) ?? Date()
+        fmt.dateFormat = "yyyy-MM-dd_HHmm"
+        self.date = fmt.date(from: datePart) ?? Date()
 
         // Try to load ownmeet.json for extra metadata
         if let data = try? Data(contentsOf: directoryURL.appending(path: "ownmeet.json")),

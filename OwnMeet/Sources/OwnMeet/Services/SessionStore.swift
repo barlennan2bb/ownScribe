@@ -71,8 +71,8 @@ final class SessionStore {
             options: .skipsHiddenFiles
         ) else { return [] }
 
-        // ownscribe session directories are named YYYY-MM-DD_HHMMSS
-        let datePattern = try? NSRegularExpression(pattern: #"^\d{4}-\d{2}-\d{2}_\d{6}$"#)
+        // ownscribe dirs: YYYY-MM-DD_HHMM  OR  YYYY-MM-DD_HHMM_slug-title
+        let datePattern = try? NSRegularExpression(pattern: #"^\d{4}-\d{2}-\d{2}_\d{4}"#)
         return entries
             .filter { url in
                 guard let vals = try? url.resourceValues(forKeys: [.isDirectoryKey]),

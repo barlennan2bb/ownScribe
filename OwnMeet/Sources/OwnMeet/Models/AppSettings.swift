@@ -29,7 +29,7 @@ final class AppSettings {
     }
 
     var captureMicrophone: Bool {
-        get { ud.bool(forKey: "captureMicrophone") }
+        get { ud.object(forKey: "captureMicrophone") as? Bool ?? true }  // default ON
         set { ud.set(newValue, forKey: "captureMicrophone") }
     }
 
