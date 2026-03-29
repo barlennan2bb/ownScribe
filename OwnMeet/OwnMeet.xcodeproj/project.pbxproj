@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		081322E72663680E57C6976A /* OwnScribeProcessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FA5223F94078CD53361662 /* OwnScribeProcessManager.swift */; };
+		0C7E22EBE74E0B7D20738171 /* LiveRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5646EAEFBB9D27F3803CA0A1 /* LiveRecordingView.swift */; };
+		0C7FD933595A1DE7AD8BEA23 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5ECB9A57D3057B01B7F6D /* SessionStore.swift */; };
+		110D813D74A779B55297424A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EB93412D567C50F75CB39F /* LibraryView.swift */; };
+		22C13D7BB48FC9F502789DB9 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC869116F78FE6DC892EA5FB /* Session.swift */; };
+		275ADDC3410EAE6063491397 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C0C7F01578D4E4909049A /* OnboardingView.swift */; };
+		4B1136BECAC71F726774B49B /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E48F436FF56835DFDAFAF7 /* ExportManager.swift */; };
+		5604701414DE4BA48A83D8AA /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B1D0073101D07E4CBD05AA /* CalendarManager.swift */; };
+		5F3B566369DAE8C2BFA609A2 /* TranscriptLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDEB58DF58FB243EF6A3BE0 /* TranscriptLine.swift */; };
+		9D3E77D25A7F362E1EF261A9 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04E1773D776F079322AB18 /* SessionView.swift */; };
+		A7D71B3B1EFA070E562A3708 /* OwnMeetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3924DBF52AF9D0FBC4F2D0C9 /* OwnMeetApp.swift */; };
+		BFF4A24A607DF9A81BDF87E8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898C07278B5B6ACAAB70AB33 /* SettingsView.swift */; };
+		C13635125408E64DD8A75A1B /* OwnScribeInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8EF056FB9671961EB6CD4 /* OwnScribeInstaller.swift */; };
+		F1443E71DCCEEF02CADA983C /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5B299D5526786F3745D227 /* MenuBarView.swift */; };
+		F8D9A6C1D2BD1525F8FBFFBE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A9F4DF336FCBE0D19E52F /* AppSettings.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07D834FFDEE8B88F02563634 /* OwnMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17F8EF056FB9671961EB6CD4 /* OwnScribeInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnScribeInstaller.swift; sourceTree = "<group>"; };
+		273A9F4DF336FCBE0D19E52F /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		3924DBF52AF9D0FBC4F2D0C9 /* OwnMeetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnMeetApp.swift; sourceTree = "<group>"; };
+		5646EAEFBB9D27F3803CA0A1 /* LiveRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRecordingView.swift; sourceTree = "<group>"; };
+		57EB93412D567C50F75CB39F /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		5EB5ECB9A57D3057B01B7F6D /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		7FDEB58DF58FB243EF6A3BE0 /* TranscriptLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptLine.swift; sourceTree = "<group>"; };
+		898C07278B5B6ACAAB70AB33 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8B04E1773D776F079322AB18 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		9E5B299D5526786F3745D227 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		B8B1D0073101D07E4CBD05AA /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		C29C0C7F01578D4E4909049A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CC869116F78FE6DC892EA5FB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E6FA5223F94078CD53361662 /* OwnScribeProcessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnScribeProcessManager.swift; sourceTree = "<group>"; };
+		E9E48F436FF56835DFDAFAF7 /* ExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0902AE0EB8913062850BA760 = {
+			isa = PBXGroup;
+			children = (
+				2A87E38B2477CEB7C8289E15 /* Sources */,
+				6C854967CC3A25C8F95455C1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24BC418E8FBBD1BE68DD568A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				273A9F4DF336FCBE0D19E52F /* AppSettings.swift */,
+				CC869116F78FE6DC892EA5FB /* Session.swift */,
+				7FDEB58DF58FB243EF6A3BE0 /* TranscriptLine.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A87E38B2477CEB7C8289E15 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8DBA4EB98847B3B7B1D2BAFB /* OwnMeet */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		30F59ECE29008B5886B45417 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57EB93412D567C50F75CB39F /* LibraryView.swift */,
+				5646EAEFBB9D27F3803CA0A1 /* LiveRecordingView.swift */,
+				C29C0C7F01578D4E4909049A /* OnboardingView.swift */,
+				8B04E1773D776F079322AB18 /* SessionView.swift */,
+				898C07278B5B6ACAAB70AB33 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6C854967CC3A25C8F95455C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07D834FFDEE8B88F02563634 /* OwnMeet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DBA4EB98847B3B7B1D2BAFB /* OwnMeet */ = {
+			isa = PBXGroup;
+			children = (
+				3924DBF52AF9D0FBC4F2D0C9 /* OwnMeetApp.swift */,
+				9A9C2C6F5900033B914D1C1A /* MenuBar */,
+				24BC418E8FBBD1BE68DD568A /* Models */,
+				D5CA4CC538DC2C5645736544 /* Services */,
+				30F59ECE29008B5886B45417 /* Views */,
+			);
+			path = OwnMeet;
+			sourceTree = "<group>";
+		};
+		9A9C2C6F5900033B914D1C1A /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				9E5B299D5526786F3745D227 /* MenuBarView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		D5CA4CC538DC2C5645736544 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B8B1D0073101D07E4CBD05AA /* CalendarManager.swift */,
+				E9E48F436FF56835DFDAFAF7 /* ExportManager.swift */,
+				17F8EF056FB9671961EB6CD4 /* OwnScribeInstaller.swift */,
+				E6FA5223F94078CD53361662 /* OwnScribeProcessManager.swift */,
+				5EB5ECB9A57D3057B01B7F6D /* SessionStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBC756D53E38BA0C5551E078 /* OwnMeet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78658ACC712058D5DD3EE7D0 /* Build configuration list for PBXNativeTarget "OwnMeet" */;
+			buildPhases = (
+				CB06660685E97A2591C81A70 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OwnMeet;
+			packageProductDependencies = (
+			);
+			productName = OwnMeet;
+			productReference = 07D834FFDEE8B88F02563634 /* OwnMeet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		588E7F685C26BAD5B65D2956 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					FBC756D53E38BA0C5551E078 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 735555E71982DB6B7E0A2883 /* Build configuration list for PBXProject "OwnMeet" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 0902AE0EB8913062850BA760;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6C854967CC3A25C8F95455C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBC756D53E38BA0C5551E078 /* OwnMeet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB06660685E97A2591C81A70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8D9A6C1D2BD1525F8FBFFBE /* AppSettings.swift in Sources */,
+				5604701414DE4BA48A83D8AA /* CalendarManager.swift in Sources */,
+				4B1136BECAC71F726774B49B /* ExportManager.swift in Sources */,
+				110D813D74A779B55297424A /* LibraryView.swift in Sources */,
+				0C7E22EBE74E0B7D20738171 /* LiveRecordingView.swift in Sources */,
+				F1443E71DCCEEF02CADA983C /* MenuBarView.swift in Sources */,
+				275ADDC3410EAE6063491397 /* OnboardingView.swift in Sources */,
+				A7D71B3B1EFA070E562A3708 /* OwnMeetApp.swift in Sources */,
+				C13635125408E64DD8A75A1B /* OwnScribeInstaller.swift in Sources */,
+				081322E72663680E57C6976A /* OwnScribeProcessManager.swift in Sources */,
+				22C13D7BB48FC9F502789DB9 /* Session.swift in Sources */,
+				0C7FD933595A1DE7AD8BEA23 /* SessionStore.swift in Sources */,
+				9D3E77D25A7F362E1EF261A9 /* SessionView.swift in Sources */,
+				BFF4A24A607DF9A81BDF87E8 /* SettingsView.swift in Sources */,
+				5F3B566369DAE8C2BFA609A2 /* TranscriptLine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		171C7E316DA43A098984A211 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		521938F3472BD7336BCB2F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/OwnMeet.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ownmeet.OwnMeet;
+				PRODUCT_NAME = OwnMeet;
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Debug;
+		};
+		DC628DC21ED7AD05FD67C7B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		DEB025BA05617206788B10D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/OwnMeet.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ownmeet.OwnMeet;
+				PRODUCT_NAME = OwnMeet;
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		735555E71982DB6B7E0A2883 /* Build configuration list for PBXProject "OwnMeet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC628DC21ED7AD05FD67C7B0 /* Debug */,
+				171C7E316DA43A098984A211 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		78658ACC712058D5DD3EE7D0 /* Build configuration list for PBXNativeTarget "OwnMeet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521938F3472BD7336BCB2F92 /* Debug */,
+				DEB025BA05617206788B10D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 588E7F685C26BAD5B65D2956 /* Project object */;
+}

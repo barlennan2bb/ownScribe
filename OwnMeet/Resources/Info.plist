@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Bundle identity -->
+    <key>CFBundleName</key>
+    <string>OwnMeet</string>
+    <key>CFBundleDisplayName</key>
+    <string>OwnMeet</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.ownmeet.OwnMeet</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+
+    <!-- Minimum macOS -->
+    <key>LSMinimumSystemVersion</key>
+    <string>14.2</string>
+
+    <!-- Menu bar app — no Dock icon -->
+    <key>LSUIElement</key>
+    <true/>
+
+    <!-- Privacy usage descriptions -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>OwnMeet records your microphone to transcribe meetings and phone calls locally on your Mac.</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>OwnMeet reads your calendar to show today's meetings and automatically start recording when a meeting begins.</string>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>OwnMeet uses Apple Events to manage recording sessions.</string>
+
+    <!-- App icon -->
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+
+    <!-- High-resolution display -->
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+
+    <!-- Scene configuration (SwiftUI lifecycle) -->
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSApplicationSupportsSecureRestorableState</key>
+    <true/>
+</dict>
+</plist>

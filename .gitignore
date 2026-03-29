@@ -1,0 +1,16 @@
+# Build artifacts
+OwnMeet/build/
+OwnMeet/*.xcodeproj/project.xcworkspace/xcuserdata/
+OwnMeet/*.xcodeproj/xcuserdata/
+*.xcuserstate
+*.xcbkptlist
+DerivedData/
+
+# macOS
+.DS_Store
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
