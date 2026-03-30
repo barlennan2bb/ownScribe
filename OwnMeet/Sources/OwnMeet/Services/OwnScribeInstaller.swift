@@ -60,6 +60,20 @@ final class OwnScribeInstaller {
         }
     }
 
+    // MARK: – Audio device enumeration
+
+    /// Returns available input device names via `ownscribe devices`
+    func availableInputDevices() async -> [String] {
+        guard let uvx = uvxPath else { return [] }
+        let output = (try? await runShellOutput(uvx, args: ["ownscribe", "devices"])) ?? ""
+        // Parse lines like:  "  MacBook Pro Microphone"
+        return output.components(separatedBy: "\n")
+            .filter { $0.hasPrefix("  ") && !$0.contains("Output") && !$0.contains("Input devices") }
+            .map { $0.trimmingCharacters(in: .whitespaces)
+                     .replacingOccurrences(of: " (default)", with: "") }
+            .filter { !$0.isEmpty }
+    }
+
     var isReady: Bool {
         if case .ready = state { return true }
         return false

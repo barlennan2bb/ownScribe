@@ -33,6 +33,8 @@ struct SettingsView: View {
 
     // MARK: – Audio tab
 
+    @State private var availableDevices: [String] = []
+
     @ViewBuilder
     private var audioTab: some View {
         @Bindable var s = settings
@@ -41,10 +43,25 @@ struct SettingsView: View {
                 Toggle("Capture system audio (meetings, calls)", isOn: $s.captureSystemAudio)
                 Toggle("Also capture microphone", isOn: $s.captureMicrophone)
                     .disabled(!settings.captureSystemAudio)
-                HStack {
-                    Text("Microphone device")
-                    Spacer()
-                    TextField("Default", text: $s.micDevice).frame(width: 200)
+
+                if !availableDevices.isEmpty {
+                    Picker("Microphone device", selection: $s.micDevice) {
+                        Text("System default").tag("")
+                        ForEach(availableDevices, id: \.self) { name in
+                            Text(name).tag(name)
+                        }
+                    }
+                } else {
+                    HStack {
+                        Text("Microphone device")
+                        Spacer()
+                        TextField("Default", text: $s.micDevice).frame(width: 200)
+                    }
+                }
+            }
+            .onAppear {
+                Task {
+                    availableDevices = await installer.availableInputDevices()
                 }
             }
             Section("Auto-stop") {
