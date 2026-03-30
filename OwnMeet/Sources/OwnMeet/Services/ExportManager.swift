@@ -71,7 +71,8 @@ final class ExportManager {
         panel.allowedContentTypes = [type.utType]
         panel.canCreateDirectories = true
 
-        guard await panel.beginSheetModal(for: NSApp.keyWindow!) == .OK,
+        guard let keyWindow = NSApp.keyWindow,
+              await panel.beginSheetModal(for: keyWindow) == .OK,
               let url = panel.url else { return }
 
         do {

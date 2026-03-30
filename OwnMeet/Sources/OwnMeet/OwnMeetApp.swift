@@ -28,13 +28,8 @@ struct OwnMeetApp: App {
         }
         .menuBarExtraStyle(.menu)
 
-        // Request notification permission on first launch (needed for meeting alerts)
-        // Using a background task so it doesn't block the app launch
-        let _ = Task {
-            await notificationManager.requestAuthorization()
-        }
-
         // MARK: Main library window
+        // Note: notification permission is requested in LibraryView.onAppear
         WindowGroup("OwnMeet", id: "library") {
             LibraryView()
                 .environment(processManager)

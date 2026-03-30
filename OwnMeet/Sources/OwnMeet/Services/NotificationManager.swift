@@ -129,12 +129,7 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
         let userInfo  = response.notification.request.content.userInfo
         let eventTitle = userInfo["eventTitle"] as? String
 
-        await MainActor.run {
-            Task { @MainActor in
-                await OwnScribeProcessManager.shared.startRecording(
-                    calendarEventTitle: eventTitle
-                )
-            }
-        }
+        // Hop to main actor — startRecording is @MainActor
+        await OwnScribeProcessManager.shared.startRecording(calendarEventTitle: eventTitle)
     }
 }

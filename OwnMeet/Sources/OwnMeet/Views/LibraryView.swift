@@ -14,9 +14,7 @@ struct LibraryView: View {
 
     @State private var selectedSession: Session?
     @State private var searchText = ""
-    @State private var askText = ""
     @State private var askResult = ""
-    @State private var isAsking = false
     @State private var showOnboarding = false
     @State private var showDeleteAlert = false
     @State private var sessionToDelete: Session?
@@ -44,6 +42,7 @@ struct LibraryView: View {
         .onAppear {
             if !settings.hasCompletedOnboarding { showOnboarding = true }
             Task { await installer.check() }
+            Task { await NotificationManager.shared.requestAuthorization() }
         }
     }
 
@@ -312,8 +311,6 @@ struct LibraryView: View {
 
     private func runAsk(question: String) async {
         guard !question.isEmpty else { return }
-        isAsking = true
-        defer { isAsking = false }
         do {
             askResult = try await pm.ask(question: question)
         } catch {

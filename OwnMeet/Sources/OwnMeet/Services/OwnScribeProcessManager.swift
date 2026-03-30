@@ -51,8 +51,8 @@ final class OwnScribeProcessManager {
                 args += ["--mic-device", settings.micDevice]
             }
         } else {
-            // mic only
-            if settings.micDevice.isEmpty {
+            // mic only — use a specific device if named, otherwise default mic
+            if !settings.micDevice.isEmpty {
                 args += ["--device", settings.micDevice]
             }
         }
@@ -71,18 +71,10 @@ final class OwnScribeProcessManager {
             args += ["--no-keep-recording"]
         }
 
-        // Backend
-        switch settings.llmBackend {
-        case .local:
-            break
-        case .ollama:
-            // ownscribe reads OLLAMA_HOST from env; pass model via args once patch lands
-            break
-        case .openai:
-            break
-        }
+        // LLM backend: ownscribe reads OLLAMA_HOST from the environment (set in spawnProcess).
+        // OpenAI-compatible host is also env-driven. No additional args needed here.
 
-        // NOTE: --stream-transcript / --json-progress / --pid-file require patched ownscribe.
+        // NOTE:
         // Until those PRs land, OwnMeet works with stock ownscribe and reads the
         // session directory after the process exits.
         await spawnProcess(args: args, calendarEventTitle: calendarEventTitle)
@@ -155,6 +147,12 @@ final class OwnScribeProcessManager {
         proc.arguments = ["ownscribe"] + args
         proc.standardOutput = pipe
         proc.standardError = errPipe
+        // Drain stderr asynchronously to prevent pipe-buffer deadlock on long recordings
+        Task.detached {
+            while !errPipe.fileHandleForReading.availableData.isEmpty {
+                _ = errPipe.fileHandleForReading.availableData
+            }
+        }
 
         // Pass through environment, adding HF_TOKEN if set
         var env = ProcessInfo.processInfo.environment
@@ -227,11 +225,15 @@ final class OwnScribeProcessManager {
         }
     }
 
+    // FUTURE: called only when --json-progress patch is applied to ownscribe upstream.
+    // See patches/ownscribe_patches.py for implementation details.
     private func handleJSONEvent(type: String, json: [String: Any]) {
         switch type {
         case "transcript_chunk":
-            if let line = TranscriptLine.fromJSON(String(data: (try? JSONSerialization.data(withJSONObject: json)) ?? Data(), encoding: .utf8) ?? "") {
-                transcriptLines.append(line)
+            // Direct field extraction — avoids double-serialize/deserialize roundtrip
+            if let text = json["text"] as? String, let start = json["start"] as? Double {
+                let speaker = json["speaker"] as? String
+                transcriptLines.append(TranscriptLine(text: text, timestamp: start, speaker: speaker))
             }
         case "session_dir":
             if let path = json["path"] as? String {
@@ -276,9 +278,8 @@ final class OwnScribeProcessManager {
     }
 
     private func reloadSessionStore() {
-        Task { @MainActor in
-            await SessionStore.shared.reload()
-        }
+        // Already @MainActor — Task inherits actor context
+        Task { await SessionStore.shared.reload() }
     }
 
     // MARK: - Elapsed timer

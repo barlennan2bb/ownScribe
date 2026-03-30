@@ -14,7 +14,6 @@ struct SessionView: View {
     @State private var selectedTab: DetailTab = .notes
     @State private var isSaving = false
     @State private var isRegenerating = false
-    @State private var selectedTemplate = "meeting"
 
     enum DetailTab: String, CaseIterable {
         case notes = "Notes"
