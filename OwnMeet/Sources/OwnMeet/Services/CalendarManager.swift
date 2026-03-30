@@ -19,6 +19,8 @@ final class CalendarManager {
 
     private let store = EKEventStore()
     private var refreshTimer: Timer?
+    /// Event IDs already triggered this session (prevents re-firing every 30 s)
+    private var triggeredEventIDs = Set<String>()
 
     // MARK: – Init
 
@@ -62,16 +64,24 @@ final class CalendarManager {
 
         todaysEvents = events
         nextEvent = events.first(where: { $0.startDate > now })
+
+        // Detect events that are about to start (within 2 min in future)
+        // OR just started (within 2 min in the past) — catches timer firing
+        // slightly after the scheduled start time.
         let startingSoon = events.first(where: {
-            $0.startDate > now && $0.startDate.timeIntervalSinceNow < 120
+            abs($0.startDate.timeIntervalSinceNow) < 120 && $0.endDate > now
         })
         upcomingEventStartingSoon = startingSoon
 
-        // Fire a notification + optionally auto-start if a meeting is imminent
+        // Fire once per event — skip if already triggered this session
         if let event = startingSoon {
+            let eid = event.eventIdentifier ?? event.title ?? UUID().uuidString
+            guard !triggeredEventIDs.contains(eid) else { return }
+            triggeredEventIDs.insert(eid)
+
             let settings = AppSettings.shared
             if settings.autoStartWithCalendar && !OwnScribeProcessManager.shared.isRecording {
-                // Fully automatic: start without prompting
+                // Fully automatic: start recording immediately
                 Task { await OwnScribeProcessManager.shared.startRecording(
                     calendarEventTitle: event.title
                 ) }
